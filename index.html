@@ -1,0 +1,116 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+  >
+
+  <title>مصحفي</title>
+
+  <link rel="apple-touch-icon" href="icon-512.png">
+
+  <meta
+    name="apple-mobile-web-app-capable"
+    content="yes"
+  >
+
+  <meta
+    name="apple-mobile-web-app-status-bar-style"
+    content="default"
+  >
+
+  <meta
+    name="theme-color"
+    content="#8f123f"
+  >
+
+  <link
+    rel="stylesheet"
+    href="style.css"
+  >
+
+  <link
+    rel="manifest"
+    href="manifest.json"
+  >
+</head>
+
+<body>
+
+  <main class="app">
+
+    <header class="header">
+      <h1>مصحفي</h1>
+    </header>
+
+    <section class="player-card">
+
+      <button
+        id="mainPlayButton"
+        class="main-play-button"
+        aria-label="تشغيل أو إيقاف"
+      >
+        ▶
+      </button>
+
+      <div class="current-surah">
+        <span id="currentSurahName">
+          اختاري سورة
+        </span>
+      </div>
+
+    </section>
+
+    <audio
+      id="quranAudio"
+      preload="metadata"
+    ></audio>
+
+    <button
+      id="setupAudioButton"
+      type="button"
+    >
+      إعداد الصوت
+    </button>
+
+    <input
+      id="audioFolderInput"
+      type="file"
+      accept="audio/mpeg,.mp3"
+      webkitdirectory
+      multiple
+      hidden
+    >
+
+    <section
+      id="surahGrid"
+      class="surah-grid"
+    ></section>
+
+  </main>
+
+  <script src="app.js"></script>
+
+  <script>
+    if ("serviceWorker" in navigator) {
+      window.addEventListener("load", () => {
+        navigator.serviceWorker
+          .register("./service-worker.js")
+          .then(() => {
+            console.log("Service Worker registered");
+          })
+          .catch((error) => {
+            console.log("Service Worker error:", error);
+          });
+      });
+    }
+  </script>
+
+</body>
+
+</html>

@@ -1,0 +1,115 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #fff8fa;
+  color: #8f123f;
+  direction: rtl;
+}
+
+.app {
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.header h1 {
+  font-size: 58px;
+  margin: 10px 0;
+  color: #8f123f;
+}
+
+.player-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+
+  background: white;
+  border: 3px solid #f3dce5;
+  border-radius: 28px;
+
+  padding: 35px 50px;
+  margin-bottom: 35px;
+
+  box-shadow: 0 8px 25px rgba(143, 18, 63, 0.08);
+}
+
+.main-play-button {
+  width: 140px;
+  height: 140px;
+
+  border: none;
+  border-radius: 50%;
+
+  background: #c92d61;
+  color: white;
+
+  font-size: 65px;
+  cursor: pointer;
+}
+
+.current-surah {
+  flex: 1;
+  text-align: center;
+}
+
+.current-surah span {
+  font-size: 50px;
+  font-weight: bold;
+  color: #8f123f;
+}
+
+.surah-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.surah-button {
+  border: none;
+  border-radius: 22px;
+
+  background: #c92d61;
+  color: white;
+
+  min-height: 130px;
+  padding: 20px;
+
+  font-size: 30px;
+  font-weight: bold;
+
+  cursor: pointer;
+
+  box-shadow: 0 7px 18px rgba(143, 18, 63, 0.12);
+}
+
+.surah-button:active {
+  transform: scale(0.97);
+}
+
+@media (max-width: 800px) {
+  .surah-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .player-card {
+    padding: 25px;
+  }
+
+  .main-play-button {
+    width: 110px;
+    height: 110px;
+    font-size: 50px;
+  }
+
+  .current-surah span {
+    font-size: 36px;
+  }
+}
